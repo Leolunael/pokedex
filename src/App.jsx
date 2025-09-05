@@ -16,11 +16,11 @@ const App = () => {
           <Navigation />
           <main>
             <Routes>
-              <Route path="/" element={<HomePage home={home} setHome ={setHome} />} />
-              <Route path="/pokemon/:id" element={<PokemonDetailPage home={home} />} />
-              <Route path="/profile/:id" element={<ProfilePage home={home} />} />
-              <Route path="/team/:id" element={<TeamPage home={home} />} />
-              <Route path="/favorite/:id" element={<FavoritePage home={home} />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="/pokemon/:id" element={<PokemonDetailPage />} />
+              <Route path="/profile/" element={<ProfilePage />} />
+              <Route path="/team/" element={<TeamPage />} />
+              <Route path="/favorites/" element={<FavoritesPage />} />
             </Routes>
           </main>
         </div>

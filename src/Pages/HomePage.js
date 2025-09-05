@@ -1,12 +1,13 @@
 import {useState} from "react";
+import {Link} from 'react-router-dom';
+import {usePokemon} from '../context/PokemonContext';
 
-const HomePage = ({home, setHome}) => {
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+const HomePage = () => {
+    const { pokemons, loading, addToFavorites, removeFromFavorites, isFavorite, addToTeam, isInTeam } = usePokemon();
 
     const [searchTerm, setSearchTerm] = useState(() =>localStorage.getItem("Pokemon") ?? "");
 
-    useEffect(() => {localStorage.setItem("Pokemon", searchTerm);}, [searchTerm])
+    useEffect(() => {localStorage.setItem("Pokemon", searchTerm);}, [searchTerm]);
 
     const handleSearch = (newSearchTerm) => {
     setSearchTerm(newSearchTerm);
